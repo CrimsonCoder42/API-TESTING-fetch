@@ -8,26 +8,16 @@ fetchPromise.then(response => {
      data.forEach(element => {
          const card = document.createElement('div');
          card.classList = 'card-body';
+         //filter incoming info for what we need. 
          const {name, height, mass} = element;
          // Construct card content
          const content = `
            <div class="card">
-           <div class="card-header" id="heading-${name}">
-             <h5 class="mb-0">
-             </h5>
-           </div>
-       
-           <div id="collapse-${name}" class="collapse show" aria-labelledby="heading-${name}" data-parent="#accordion">
-             <div class="card-body">
-       
-               <h5>${name}</h5>
-               <p>${height}</p>
-               <p>${mass}</p>
+               <p>Name: ${name}</p>
+               <p>Height: ${height}</p>
+               <p>Mass: ${mass}</p>
              </div>
-           </div>
-         </div>
          `;
-       
          // Append newyly created card element to the container
          container.innerHTML += content;
        })
